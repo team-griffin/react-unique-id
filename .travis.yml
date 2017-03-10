@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker build -f docker/Dockerfile.ci -t team-griffin/react-unique-id_ci .
+
+script:
+  - docker run -ti team-griffin/react-unique-id_ci /bin/bash -c "yarn run lint:js"
+  - docker run -ti team-griffin/react-unique-id_ci /bin/bash -c "yarn run build"
