@@ -22,7 +22,6 @@
     "dockerfile:ci": "dockerscript ./docker/dockerfile.js ./docker/Dockerfile.ci"
   },
   "devDependencies": {
-    "@team-griffin/install-self-peers": "^1.0.0",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.1.21",
     "babel-eslint": "^7.1.1",
