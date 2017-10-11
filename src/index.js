@@ -1,10 +1,10 @@
 import {
   Component,
-  PropTypes,
   cloneElement,
   createElement,
   isValidElement,
 } from 'react';
+import PropTypes from 'prop-types';
 import uniqueId from 'lodash.uniqueid';
 
 class UniqueId extends Component {
