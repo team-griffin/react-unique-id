@@ -8,7 +8,7 @@ import {
   setDisplayName,
   compose,
 } from 'recompose';
-import omit from 'ramda/es/omit';
+import { omit } from 'ramda';
 
 const UniqueId = (props) => {
   const {
@@ -20,12 +20,12 @@ const UniqueId = (props) => {
     'render',
   ])(props);
 
-  if(props.render != null) {
+  if (props.render != null) {
     return props.render({
       ...cleanProps,
       id,
     });
-  } 
+  }
 
   if (isValidElement(props.component) === true) {
     return cloneElement(props.component, {
@@ -41,7 +41,9 @@ const UniqueId = (props) => {
 
 const enhance = compose(
   setDisplayName('UniqueId'),
-  withUniqueId({}),
+  withUniqueId({
+
+  }),
 );
 
 export default enhance(UniqueId);

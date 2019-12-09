@@ -5,8 +5,7 @@ import {
   mapProps,
   setDisplayName,
 } from 'recompose';
-import omit from 'ramda/es/omit';
-import merge from 'ramda/es/merge';
+import { omit, merge } from 'ramda';
 
 const generateIntId = () => uniqueId();
 
@@ -16,7 +15,7 @@ const withUniqueId = (config) => (WrappedComponent) => {
     generateId,
   } = merge({
     prefix: '',
-    generateId: generateIntId
+    generateId: generateIntId,
   }, config);
 
   const enhance = compose(
@@ -24,7 +23,7 @@ const withUniqueId = (config) => (WrappedComponent) => {
     withState('id', 'setId', (props) => {
       return `${props.prefix || prefix}${generateId()}`;
     }),
-    mapProps(omit(['setId', 'prefix'])),
+    mapProps(omit([ 'setId', 'prefix' ])),
   );
 
   return enhance(WrappedComponent);
