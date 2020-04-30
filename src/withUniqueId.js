@@ -5,8 +5,7 @@ import {
   mapProps,
   setDisplayName,
 } from 'recompose';
-import omit from 'ramda/es/omit';
-import merge from 'ramda/es/merge';
+import { omit, merge } from 'ramda';
 
 const generateIntId = () => uniqueId();
 

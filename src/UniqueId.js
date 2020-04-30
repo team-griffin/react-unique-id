@@ -8,7 +8,7 @@ import {
   setDisplayName,
   compose,
 } from 'recompose';
-import omit from 'ramda/es/omit';
+import { omit } from 'ramda';
 
 const UniqueId = (props) => {
   const {
